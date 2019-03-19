@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   
+   
+    <link rel="stylesheet" type="text/css" href="../Stylesheets/MainCSS.css">
+
+</head>
+
+<body>
+    <div class="container" id="app">
+        <header class="">
+
+            <nav class="navbar navbar-light bg-light justify-content-between">
+                <img src="../Stylesheets/bookLogo2.png" alt="Book Logo" class="bookLogo">
+                <a class="navbar-brand">
+                    <h1>Ubiqum book store</h1>
+                </a>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="text" v-model="search" placeholder="Search by title" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+            <div>
+            <p>Filter by language:</p>
+            <div class="row">
+<label><input class="radioBut" type="radio" name="language" value="English" onclick="app.englishBooks()">English</label><br>
+<lable><input class="radioBut" type="radio" name="language" value="Spanish" onclick="app.spanishBooks()">Spanish</lable><br>
+<lable><input class="radioBut" type="radio" name="language" value="All" onclick="app.englishAndSpanishBooks()">All</lable><br>
+</div>
+       </div>
+        </header>
+        <hr>
+        <main>
+            <div>lots of little book logos 25 books. Use bootstrap to show them with fancy box
+                small screens show one/two books per row
+                medium screens show 3 in a row
+                large screens show 4 books per row</div>
+            <div class="row">
+                <div v-for="item in filteredBooks">
+<!--                       <div v-if="filteredBooks.length == 0 && (search !='')">No Data is Found</div>-->
+                    
+
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img :src="item.portada" alt="item.titulo" style="width:300px;height:300px;">
+                            </div>
+                            <div class="flip-card-back">
+                                <h1>{{item.titulo}}</h1>
+                                <p>{{item.descripcion}}</p>
+                                <p><button>More Information</button></p>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+            <h4 v-if="filteredBooks.length == 0">No Search Results Found</h4>
+        </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+   
+     <script src="https://unpkg.com/vue/dist/vue.js"></script>
+   
+   
+
+    <script src="../Javascript/api.js"></script>
+    <script src=../Javascript/MainJS.js> </script>
+    </body>
+</html>
