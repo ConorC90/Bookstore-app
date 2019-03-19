@@ -8,7 +8,7 @@
 
    
    
-    <link rel="stylesheet" type="text/css" href="../Stylesheets/MainCSS.css">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/MainCSS.css">
 
 </head>
 
@@ -17,7 +17,7 @@
         <header class="">
 
             <nav class="navbar navbar-light bg-light justify-content-between">
-                <img src="../Stylesheets/bookLogo2.png" alt="Book Logo" class="bookLogo">
+                <img src="Stylesheets/bookLogo2.png" alt="Book Logo" class="bookLogo">
                 <a class="navbar-brand">
                     <h1>Ubiqum book store</h1>
                 </a>
@@ -49,7 +49,7 @@
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img :src="item.portada" alt="item.titulo" style="width:300px;height:300px;">
+                                <img :src="item.portada" alt="item.titulo" class="booksPics">
                             </div>
                             <div class="flip-card-back">
                                 <h1>{{item.titulo}}</h1>
@@ -84,7 +84,7 @@
    
    
 
-    <script src="../Javascript/api.js"></script>
-    <script src=../Javascript/MainJS.js> </script>
+    <script src="Javascript/api.js"></script>
+    <script src=Javascript/MainJS.js> </script>
     </body>
 </html>

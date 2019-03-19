@@ -9,11 +9,11 @@
 .logoandText{
     display: flex;
 }
-.bookPics{
-    height: 200px;
-    padding: 10px;
-    width: 20vw;
-    max-width: 200px;
+.booksPics{
+    height: 300px;
+
+    width: 250px;
+    max-width: 250px;
 }
 .bookPics:hover{
     transform: rotateY( 180deg);
@@ -42,11 +42,12 @@ h4{
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   background-color: transparent;
-  width: 300px;
+  width: 250px;
   height: 300px;
   border: 1px solid #f1f1f1;
   perspective: 1000px;
     margin:10px;
+
     /* Remove this if you don't want the 3D effect */
 }
 
@@ -84,4 +85,5 @@ h4{
   background-color: dodgerblue;
   color: white;
   transform: rotateY(180deg);
+        overflow-y: scroll;
 }
